@@ -4,6 +4,7 @@ import { useLoaderData } from "@remix-run/react";
 import * as base32 from "thirty-two";
 import { Buffer } from "node:buffer";
 import { generateTOTP } from "@epic-web/totp";
+import { signJWT } from "~/utils.server";
 
 export const meta: MetaFunction = () => {
   return [
@@ -14,13 +15,15 @@ export const meta: MetaFunction = () => {
 
 export function loader() {
   const buf = Buffer.from("hello world", "utf8");
-  const totp = generateTOTP({});
+  // const totp = generateTOTP({});
+  const token = signJWT({ foo: "bar" }, "1h", "secret");
   return {
     encode: base32.encode("node").toString(),
     decode: base32.decode("NZXWIZI=").toString(),
     buf: buf.toString(),
     buf64: buf.toString("base64"),
-    totp,
+    // totp,
+    // token,
   };
 }
 

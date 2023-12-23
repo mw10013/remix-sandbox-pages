@@ -12,10 +12,24 @@ export default {
   // appDirectory: "app",
   // assetsBuildDirectory: "public/build",
   // publicPath: "/build/",
+  // browserNodeBuiltinsPolyfill: {
+  //   modules: {
+  //     buffer: true,
+  //     crypto: true,
+  //     fs: "empty",
+  //     stream: true,
+  //     util: true,
+  //   },
+  //   globals: {
+  //     Buffer: true,
+  //   },
+  // },
   serverNodeBuiltinsPolyfill: {
-    modules: { buffer: true, crypto: true, fs: "empty" },
+    // modules: { buffer: true, crypto: true, fs: "empty", stream: true },
+    modules: { crypto: true, stream: true },
     globals: {
-      Buffer: true,
+      // Buffer: true,
+      process: true,
     },
   },
 };
