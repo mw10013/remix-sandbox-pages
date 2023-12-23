@@ -19,14 +19,14 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20231121.0",
+    "@cloudflare/workers-types": "^4.20231218.0",
     "@remix-run/dev": "^2.4.1",
     "@remix-run/eslint-config": "^2.4.1",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",
     "eslint": "^8.38.0",
     "typescript": "^5.1.0",
-    "wrangler": "3.19.0"
+    "wrangler": "3.22.1"
   },
   "engines": {
     "node": ">=18.0.0"
