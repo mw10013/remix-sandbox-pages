@@ -18,10 +18,13 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="p-8">
-      <h1 className="text-3xl font-semibold">Welcome to Remix Sandbox Pages</h1>
-      <button className="btn btn-primary">Button</button>
-      <Select>
+    <div className="p-8 prose">
+      <h1 className="">Welcome to Remix Sandbox Pages</h1>
+      <div className="flex gap-2 flex-wrap">
+        <button className="btn">Button</button>
+        <button className="btn btn-primary">Button</button>
+      </div>
+      {/* <Select>
         <Label>Favorite Animal</Label>
         <Button>
           <SelectValue />
@@ -34,7 +37,7 @@ export default function Index() {
             <ListBoxItem>Kangaroo</ListBoxItem>
           </ListBox>
         </Popover>
-      </Select>
+      </Select> */}
     </div>
   );
 }
