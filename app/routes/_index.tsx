@@ -18,8 +18,9 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix Sandbox Pages</h1>
+    <div className="p-8">
+      <h1 className="text-3xl font-semibold">Welcome to Remix Sandbox Pages</h1>
+      <button className="btn btn-primary">Button</button>
       <Select>
         <Label>Favorite Animal</Label>
         <Button>
