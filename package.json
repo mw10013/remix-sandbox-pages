@@ -6,7 +6,7 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev --manual -c \"npm run start\"",
-    "start": "wrangler pages dev  ./public --compatibility-date=2023-12-12 --compatibility-flags=\"nodejs_compat\"",
+    "start": "wrangler pages dev  ./public --compatibility-date=2023-12-12",
     "typecheck": "tsc"
   },
   "dependencies": {
