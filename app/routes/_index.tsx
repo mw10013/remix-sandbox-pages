@@ -20,10 +20,23 @@ export default function Index() {
   return (
     <>
       <div className="navbar bg-base-100">
-        <div className="flex-1">
+        <div className="navbar-start">
           <a className="btn btn-ghost text-xl">Sandbox</a>
         </div>
-        <div className="flex-none">
+        <div className="navbar-center">
+          <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
+            <li>
+              <a>Item 1</a>
+            </li>
+            <li className="active">
+              <a>Item 2</a>
+            </li>
+            <li>
+              <a>Item 3</a>
+            </li>
+          </ul>
+        </div>
+        <div className="navbar-end">
           <button className="btn btn-square btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"

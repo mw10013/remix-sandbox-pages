@@ -7,8 +7,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigate,
 } from "@remix-run/react";
 import styles from "./tailwind.css";
+// import { RouterProvider } from "react-aria-components";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -16,6 +18,7 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
+  const navigate = useNavigate();
   return (
     <html lang="en">
       <head>
@@ -25,7 +28,9 @@ export default function App() {
         <Links />
       </head>
       <body>
+        {/* <RouterProvider navigate={navigate}> */}
         <Outlet />
+        {/* </RouterProvider> */}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
