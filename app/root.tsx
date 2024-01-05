@@ -1,6 +1,7 @@
 import type { LinksFunction } from "@remix-run/cloudflare";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -8,6 +9,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 import styles from "./tailwind.css";
 
@@ -17,10 +19,11 @@ export const links: LinksFunction = () => [
 ];
 
 function NavBar() {
+  const location = useLocation();
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl">Sandbox</a>
+        <Link to="/" className="btn btn-ghost text-xl">Sandbox</Link>
       </div>
       <div className="navbar-center">
         <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
@@ -33,6 +36,7 @@ function NavBar() {
         </ul>
       </div>
       <div className="navbar-end">
+        <p>{location.pathname}</p>
         <button className="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
