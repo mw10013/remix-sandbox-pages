@@ -18,22 +18,36 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
 ];
 
+const navItems = [
+  { to: "/fee", label: "Fee" },
+  { to: "/fi", label: "Fi" },
+  { to: "/fo", label: "Fo" },
+  { to: "/fum", label: "Fum" },
+];
+
 function NavBar() {
   const location = useLocation();
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
-        <Link to="/" className="btn btn-ghost text-xl">Sandbox</Link>
+        <Link to="/" className="btn btn-ghost text-xl">
+          Sandbox
+        </Link>
       </div>
       <div className="navbar-center">
-        <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
-          <li>
-            <NavLink to="/fee">Fee</NavLink>
-          </li>
-          <li>
-            <NavLink to="/fi">Fi</NavLink>
-          </li>
-        </ul>
+        <div role="tablist" className="tabs tabs-bordered">
+          {navItems.map(({ to, label }) => (
+            <NavLink
+              key={to}
+              to={to}
+              className={({ isActive }) =>
+                `tab ${isActive ? "tab-active" : ""}`
+              }
+            >
+              {label}
+            </NavLink>
+          ))}
+        </div>
       </div>
       <div className="navbar-end">
         <p>{location.pathname}</p>
